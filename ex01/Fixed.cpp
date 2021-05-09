@@ -6,7 +6,7 @@
 /*   By: migferna <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:01:01 by migferna          #+#    #+#             */
-/*   Updated: 2021/05/09 11:05:16 by migferna         ###   ########.fr       */
+/*   Updated: 2021/05/09 11:47:53 by migferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ Fixed::Fixed(): _value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &orig): _value(orig._value)
+Fixed::Fixed(Fixed const &orig)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = orig;
 }
 
 Fixed::Fixed(const int value):_value(value << _fractional_bits)
